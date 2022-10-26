@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     [Header("Platform Settings")]
     [SerializeField] GameObject platform_1;
     [SerializeField] GameObject platform_2;
-    [SerializeField] float[] donusHizlari;
+    [SerializeField] float donusHizi;
 
     void Start()
     {
@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
         car[ActiveCarIndex].GetComponent<Car>().forward = true;
         ActiveCarIndex++;
         }        
-        platform_1.transform.Rotate(new Vector3(0,0,donusHizlari[0]), Space.Self);
+        platform_1.transform.Rotate(new Vector3(0,0, donusHizi), Space.Self);
     }
     
     

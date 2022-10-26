@@ -1035,8 +1035,7 @@ MonoBehaviour:
   HowMuchCar: 4
   platform_1: {fileID: 1928479130343848824}
   platform_2: {fileID: 0}
-  donusHizlari:
-  - 0.4
+  donusHizi: 0.5
 --- !u!4 &1293832623
 Transform:
   m_ObjectHideFlags: 0
