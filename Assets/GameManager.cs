@@ -11,8 +11,7 @@ public class GameManager : MonoBehaviour
 
 
     [Header("Platform Settings")]
-    [SerializeField] GameObject platform_1;
-    [SerializeField] GameObject platform_2;
+    [SerializeField] GameObject platform_1;    
     [SerializeField] float donusHizi;
 
     void Start()
@@ -21,6 +20,31 @@ public class GameManager : MonoBehaviour
         
     }
 
+    
+    void Update()
+
+    {
+        CarForward();
+        PlatformTurn();
+
+    }
+
+    void CarForward()
+    {
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            car[ActiveCarIndex].GetComponent<Car>().forward = true;
+            ActiveCarIndex++;
+        }
+    }
+
+    void PlatformTurn()
+    {
+        platform_1.transform.Rotate(new Vector3(0, 0, donusHizi), Space.Self);
+    }
+    /// <summary>
+    /// For new car summon trigger from another scp.
+    /// </summary>
     public void NewCarSummon()
     {
         if (ActiveCarIndex < HowMuchCar)
@@ -31,18 +55,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Araç bitti");
         }
-            
-    }
-    void Update()
 
-    {        
-        if (Input.GetKeyDown(KeyCode.W)) 
-        {
-        car[ActiveCarIndex].GetComponent<Car>().forward = true;
-        ActiveCarIndex++;
-        }        
-        platform_1.transform.Rotate(new Vector3(0,0, donusHizi), Space.Self);
     }
-    
-    
+
 }
