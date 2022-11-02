@@ -16,11 +16,15 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        car[ActiveCarIndex].SetActive (true);
-        
+        CarSetActive(); // set active car for object pool
+
     }
 
-    
+    private void CarSetActive()
+    {
+        car[ActiveCarIndex].SetActive(true);
+    }
+
     void Update()
 
     {
@@ -43,7 +47,7 @@ public class GameManager : MonoBehaviour
         platform_1.transform.Rotate(new Vector3(0, 0, donusHizi), Space.Self);
     }
     /// <summary>
-    /// For new car summon trigger from another scp.
+    ///  ("Yasin")      For new car summon trigger from another scp.
     /// </summary>
     public void NewCarSummon()
     {
