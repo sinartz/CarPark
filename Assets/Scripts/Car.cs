@@ -9,9 +9,9 @@ public class Car : MonoBehaviour
     [SerializeField] Transform carParent;
     [SerializeField] GameManager _gameManager;
     [SerializeField] bool stopPointd = false;
-     
 
-    
+ 
+
 
     // Update is called once per frame
     void FixedUpdate()
@@ -41,6 +41,12 @@ public class Car : MonoBehaviour
         {
             stopPointd = true;
         }
+        if (collision.gameObject.CompareTag("Diamond"))
+        {   
+            
+            _gameManager.diamondScore++;
+            collision.gameObject.SetActive(false);
+        }    
         
 
             

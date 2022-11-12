@@ -12,8 +12,10 @@ public class GameManager : MonoBehaviour
 
     [Header("Platform Settings")]
     [SerializeField] GameObject platform_1;    
-    [SerializeField] float donusHizi;
+    [SerializeField] float rotationSpeed;
 
+    [Header("Platform Settings")]
+    public int diamondScore;
     void Start()
     {
         CarSetActive(); // set active car for object pool
@@ -41,10 +43,9 @@ public class GameManager : MonoBehaviour
             ActiveCarIndex++;
         }
     }
-
     void PlatformTurn()
     {
-        platform_1.transform.Rotate(new Vector3(0, 0, donusHizi), Space.Self);
+        platform_1.transform.Rotate(new Vector3(0, 0, rotationSpeed), Space.Self);
     }
     /// <summary>
     ///  ("Yasin")      For new car summon trigger from another scp.
